@@ -6,12 +6,17 @@ body {
     background-color: none;
     border-color: rgb(233, 233, 233, 0.3);
 }
-
-.buttons{
-   
-    grid-template-columns: 1fr 1fr 2fr;
+.btn-light {
+    border-color: black;
 }
 
+.buttons{
+    grid-template-columns: 1fr 1fr 2fr;
+}
+h1 {
+    background: #b7cece;
+    padding: 23x;
+}
 nav {
     display: flex;
     align-items: center;
@@ -20,7 +25,7 @@ nav {
 }
 .flex-container{
     margin-top: 20px;
-    display: grid;
+    display: flex;
     flex-wrap: nowrap;
     width: 100%;
     height: 500px;
@@ -29,11 +34,12 @@ nav {
 }
 
 .flex-item{
-    background: cyan;
+    background: #b7cece;
     border: 1pt solid black;
-    width: 10px;
+    width: 18px;
     transition: 0.1s all ease;
 }
+
 
 #input{
     color: white;
