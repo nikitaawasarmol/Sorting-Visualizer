@@ -21,7 +21,7 @@ nav {
     display: flex;
     align-items: center;
     text-align: center;
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
 }
 .flex-container{
     margin-top: 20px;
@@ -34,6 +34,7 @@ nav {
 }
 
 .flex-item{
+    
     background: #b7cece;
     border: 1pt solid black;
     width: 18px;
