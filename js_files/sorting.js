@@ -7,6 +7,17 @@ function swap(element1, element2) {
 
 }
 
+// disabling sorting buttons when sorting is in process
+function disableSorting() {
+    document.querySelector(".bubbleSort").disabled = true;
+    document.querySelector(".InsertionSort").disabled = true;
+    document.querySelector(".SelectionSort").disabled = true;
+    // document.querySelector(".bubbleSort").disabled = true;
+    // document.querySelector(".bubbleSort").disabled = true;
+    // document.querySelector(".bubbleSort").disabled = true;
+
+}
+
 function waitforme(milisec) { 
     return new Promise(resolve => { 
         setTimeout(() => { resolve('') }, milisec); 
@@ -47,15 +58,16 @@ function createNewArray(noOfBars = 50) {
 }
 console.log(array)
 
+
 const bars = document.querySelector('#bars');
 
 for(let i = 0; i < noOfBars; i++) {
-const bar = document.createElement("div");
- bar.style.height = `${array[i] * 2}px`;
- bar.classList.add('bar');
-bar.classList.add('flex-item');
-bar.classList.add(`barNo${i}`);
-bars.appendChild(bar);
+    const bar = document.createElement("div");
+    bar.style.height = `${array[i] * 2}px`;
+    bar.classList.add('bar');
+    bar.classList.add('flex-item');
+    bar.classList.add(`barNo${i}`);
+    bars.appendChild(bar);
 }
 }
 
@@ -64,6 +76,8 @@ function deleteBar() {
     bar.innerHTML = '';
 }
 
+
+// creating random new array
 const newArray = document.querySelector(".newArray");
 newArray.addEventListener("click", function() {
     console.log("from newarray" + arraySize.value);

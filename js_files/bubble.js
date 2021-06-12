@@ -24,7 +24,7 @@ const bubbleSorting = document.querySelector(".bubbleSort");
 // console.log("outsite bubble function")
 bubbleSorting.addEventListener('click', async function() {
    console.log("After clicking");
-//    disableSortingBtn();
+//    disableSorting();
 //    disableSizeSlider();
 //    disableNewArrayBtn();
       await bubble();
