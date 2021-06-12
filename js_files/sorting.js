@@ -16,17 +16,18 @@ function waitforme(milisec) {
 let arraySize = document.querySelector('#arr_sz');
 
 
-// Event listener to update the bars on the UI
+// update the bars on the UI
 arraySize.addEventListener('input', function(){
     console.log(arraySize.value, typeof(arraySize.value));
     createNewArray(parseInt(arraySize.value));
 });
 
-// Default input for waitforme function (260ms)
+// input for waitforme function (260ms)
 let delay = 260;
 
 let delayElement = document.querySelector('#speed_input');
-// Event listener to update delay time 
+
+//  update delay time 
 delayElement.addEventListener('input', function(){
     console.log(delayElement.value, typeof(delayElement.value));
     delay = 320 - parseInt(delayElement.value);
@@ -37,6 +38,8 @@ let array = [];
 createNewArray();
 
 function createNewArray(noOfBars = 50) {
+
+    deleteBar();
    
     array = [];
     for (let i = 0; i < noOfBars; i++) {
@@ -48,16 +51,24 @@ const bars = document.querySelector('#bars');
 
 for(let i = 0; i < noOfBars; i++) {
 const bar = document.createElement("div");
- bar.style.height = `${array[i] * 2.7}px`;
+ bar.style.height = `${array[i] * 2}px`;
  bar.classList.add('bar');
 bar.classList.add('flex-item');
+bar.classList.add(`barNo${i}`);
 bars.appendChild(bar);
 }
+}
+
+function deleteBar() {
+    const bar = document.querySelector("#bars");
+    bar.innerHTML = '';
 }
 
 const newArray = document.querySelector(".newArray");
 newArray.addEventListener("click", function() {
     console.log("from newarray" + arraySize.value);
     console.log("form newarray" + delay);
+
+    createNewArray(arraySize.value);
 })
 
