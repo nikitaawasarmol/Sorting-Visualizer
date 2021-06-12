@@ -1,7 +1,7 @@
-console.log("First line of code")
+console.log("Start (bubble sort)")
 
 async function bubble() {
-    console.log("in bubble function");
+    console.log("inside bubble function");
     const element = document.querySelectorAll(".bar");
     for(let i = 0; i < element.length - 1;i++) {
         for(let j = 0; j < element.length -i -1; j++) {
@@ -20,8 +20,8 @@ async function bubble() {
 }
 
 const bubbleSorting = document.querySelector(".bubbleSort");
-console.log(bubbleSorting);
-console.log("outsite bubble function")
+// console.log(bubbleSorting);
+// console.log("outsite bubble function")
 bubbleSorting.addEventListener('click', async function() {
    console.log("After clicking");
 //    disableSortingBtn();
@@ -31,5 +31,5 @@ bubbleSorting.addEventListener('click', async function() {
 //    enableSortingBtn();
 //    enableSizeSlider();
 //    enableNewArrayBtn();
-   console.log("end line of the code");
+   console.log("end of bubble sort");
 });
