@@ -50,7 +50,12 @@ async function selection() {
 
 const selectionSortBtn = document.querySelector(".SelectionSort");
 selectionSortBtn.addEventListener('click', async function() {
+    disableSorting();
+    disableSizeSlider();
+    disableNewArray();
     await selection();
-
+    enableSorting();
+    enableSizeSlider();
+    enableNewArray();
     console.log("end of selection sort");
 });

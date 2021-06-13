@@ -107,12 +107,12 @@ mergeSortbtn.addEventListener('click', async function(){
     let ele = document.querySelectorAll('.bar');
     let l = 0;
     let r = parseInt(ele.length) - 1;
-//     disableSortingBtn();
-//     disableSizeSlider();
-    // disableNewArrayBtn();
+    disableSorting();
+    disableSizeSlider();
+    disableNewArray();
     await mergeSort(ele, l, r);
-    // enableSortingBtn();
-    // enableSizeSlider();
-    // enableNewArrayBtn();
+    enableSorting();
+    enableSizeSlider();
+    enableNewArray();
     console.log("end of merge sort");
 });

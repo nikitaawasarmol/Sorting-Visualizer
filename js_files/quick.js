@@ -3,9 +3,9 @@
  * partition function - take element (left side should be smaller than element, right side should be greater than element)
  * colors - pivot element, current element, if element not less than pivot, for swaping
  */
-
+console.log("start quick sort")
 async function partition(element, left, right){
-    console.log('In partition()');
+    console.log('Inside partition function');
     let i = left - 1;
     element[right].style.background = 'red';
     for(let j = left; j <= right - 1; j++){
@@ -14,7 +14,7 @@ async function partition(element, left, right){
         await waitforme(delay);
 
         if(parseInt(element[j].style.height) < parseInt(element[right].style.height)){
-            console.log('In partition for j if');
+            
             i++;
             swap(element[i], element[j]);
             element[i].style.background = 'orange';
@@ -46,7 +46,7 @@ async function partition(element, left, right){
 }
 
 async function quickSort(element, left, right){
-    console.log('In quickSort()', `left=${left} right=${right}`, typeof(left), typeof(right));
+    console.log('In quickSort function', `left=${left} right=${right}`, typeof(left), typeof(right));
     if(left < right){
         let pivot_index = await partition(element, left, right);
         await quickSort(element, left, pivot_index - 1);
@@ -66,12 +66,12 @@ quickSortbtn.addEventListener('click', async function(){
     let element = document.querySelectorAll('.bar');
     let left = 0;
     let right = element.length - 1;
-    // disableSortingBtn();
-    // disableSizeSlider();
-    // disableNewArrayBtn();
+    disableSorting();
+    disableSizeSlider();
+    disableNewArray();
     await quickSort(element, left, right);
-    // enableSortingBtn();
-    // enableSizeSlider();
-    // enableNewArrayBtn();
+    enableSorting();
+    enableSizeSlider();
+    enableNewArray();
 });
 
