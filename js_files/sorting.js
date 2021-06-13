@@ -12,11 +12,37 @@ function disableSorting() {
     document.querySelector(".bubbleSort").disabled = true;
     document.querySelector(".InsertionSort").disabled = true;
     document.querySelector(".SelectionSort").disabled = true;
-    // document.querySelector(".bubbleSort").disabled = true;
-    // document.querySelector(".bubbleSort").disabled = true;
-    // document.querySelector(".bubbleSort").disabled = true;
+    document.querySelector(".QuickSort").disabled = true;
+    document.querySelector(".MergeSort").disabled = true;
+}
+
+// enable sorting buttons
+function enableSorting() {
+    document.querySelector(".bubbleSort").disabled = false;
+    document.querySelector(".InsertionSort").disabled = false;
+    document.querySelector(".SelectionSort").disabled = false;
+    document.querySelector(".QuickSort").disabled = false;
+    document.querySelector(".MergeSort").disabled = false;
 
 }
+
+// disable size slider when sorting is in process
+function disableSizeSlider(){
+    document.querySelector("#arr_sz").disabled = true;
+}
+// enable size slider
+function enableSizeSlider(){
+    document.querySelector("#arr_sz").disabled = false;
+}
+// disable newarray function
+function disableNewArray(){
+    document.querySelector(".newArray").disabled = true;
+}
+// enable newarray function
+function enableNewArray(){
+    document.querySelector(".newArray").disabled = false;
+}
+
 
 function waitforme(milisec) { 
     return new Promise(resolve => { 
@@ -82,7 +108,8 @@ const newArray = document.querySelector(".newArray");
 newArray.addEventListener("click", function() {
     console.log("from newarray" + arraySize.value);
     console.log("form newarray" + delay);
-
+    enableSorting();
+    enableSizeSlider();
     createNewArray(arraySize.value);
 })
 
